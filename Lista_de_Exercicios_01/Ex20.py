@@ -2,7 +2,7 @@ usuarios = []
 opc = -1
 
 while opc != 0:
-    print("--MENU--")
+    print("\n--MENU--")
     print("1- Cadastrar")
     print("2- Listar Usuarios")
     print("3- Buscar Usuario")
@@ -25,11 +25,14 @@ while opc != 0:
             print("Usuário cadastrado com sucesso!")
             
         case 2:
-            for usuario in usuarios:
-                print(f"Informações da pessoa {usuarios.index(usuario)+1}:")
-                print("Nome:", usuario["nome"])
-                print("Idade:", usuario["idade"])
-                print("Cidade:", usuario["cidade"])
+            if usuarios.__len__() == 0:
+                print("Nenhum usuário cadastrado.")
+            else:
+                for usuario in usuarios:
+                    print(f"\nInformações da pessoa {usuarios.index(usuario)+1}:")
+                    print("Nome:", usuario["nome"])
+                    print("Idade:", usuario["idade"])
+                    print("Cidade:", usuario["cidade"])
           
         case 3:
             nome_busca = input("Digite o nome do usuário que deseja buscar: ")
@@ -43,8 +46,14 @@ while opc != 0:
             else:
                 print("Usuário não encontrado.")
         case 4:
-            usuarios.remove(input("Digite o nome do usuário que deseja remover: "))
-            print("Usuário removido com sucesso!")
+            nome_remover = input("Digite o nome do usuário que deseja remover: ")
+            for usuario in usuarios:
+                if usuario["nome"] == nome_remover:
+                    usuarios.remove(usuario)
+                    print("Usuário removido com sucesso!")
+                    break
+                else:
+                    print("Usuário não encontrado.")
         case 0:
             print("Saindo do programa...")
         case _:
