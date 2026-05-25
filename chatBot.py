@@ -2,7 +2,7 @@ from openai import OpenAI
 
 # Sua chave da NVIDIA
 cliente = OpenAI(
-    api_key="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",
+    api_key="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",
     base_url="https://integrate.api.nvidia.com/v1"
 )
 
