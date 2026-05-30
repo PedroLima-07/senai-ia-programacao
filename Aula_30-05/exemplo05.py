@@ -31,12 +31,7 @@ url= "https://g1.globo.com/sp/sorocaba-jundiai/"
 conteudo=etrair_texto(url)
 
 agent = Agent(
-    model=OpenAIChat(
-        id="meta/llama-3.1-70b-instruct",
-        api_key=API_KEY,
-        base_url="https://integrate.api.nvidia.com/v1"
-    ),    
-    markdown=True
+    
 )
 
 agent.print_response(
